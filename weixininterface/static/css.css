@@ -1,0 +1,80 @@
+body{
+  width:100%;
+  height:100%;
+  background-color:#ECECEC;
+}
+.title{
+   padding-left:10%;
+padding-right:10%;
+padding-top:10%; 
+padding-bottom:10%;
+   height:20vh; 
+   text-align: center;
+width:100%;
+font-size:7.5vw;
+/* height:50px; */
+}
+.listcontent{
+  padding-left:5%;
+}
+.carousel-inner{
+  height:100%;
+}
+.list-group-item{
+  height:8vh;
+  padding:1.5vh 15px;
+}
+.listcontent{
+  font-size:3.6vh;
+} 
+.jtextfill{
+  font-size:4vh;
+}
+.result{
+  padding-left:10%;
+padding-right:10%;
+
+padding-top:5vh;
+   height:20vh; 
+   text-align: center;
+}
+#ranking{
+	position:relative;
+height:100vh;
+  width:100%;
+/*   padding-bottom:20%; */
+}
+.list-group{
+  margin-bottom:0;
+}
+/* .list-group-item-success{
+  background-color:#FDDC9A;
+} */
+#myCarousel{
+  width:100%;
+  height:100%;
+/*   padding-left:10%;
+padding-right:10%; */
+/*   height:40%; */
+}
+.item{
+  width:100%;
+  height:100%;
+}
+/* #ranking-content{
+  background-color:white;
+  position:relative;
+  width:90%;
+  height:90%;
+  margin-left:5%;
+  margin-top:5%;
+  top:30;
+  margin-bottom:5%;
+} */
+img.source-image {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index:-1;
+}

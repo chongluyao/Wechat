@@ -1,0 +1,89 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>排行榜！</title>
+  
+    
+    <link href="{% static "ranking/css/bootstrap.min.css" %}" rel="stylesheet">
+    <script type="text/javascript" src="{% static "ranking/jq/jq.js" %}"></script>
+    <script type="text/javascript" src="{% static "ranking/jqm/jquery.mobile.custom.js" %}"></script>
+  <script type="text/javascript" src="{% static "ranking/js/bootstrap.min.js" %}"></script>
+  <link href="{% static "ranking/css.css" %}" rel="stylesheet"/>
+    
+  </head>
+<body>
+  <div id="ranking">
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+    <li data-target="#myCarousel" data-slide-to="3"></li>
+    <li data-target="#myCarousel" data-slide-to="4"></li>
+    <li data-target="#myCarousel" data-slide-to="5"></li>
+  </ol>
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+  <div class='title'>
+      <span>{{result0.title}} 排行榜</span>
+  </div>
+      <ul class="list-group">
+      {% for item, score in result0.result %}
+  <li class="list-group-item list-group-item-info"><div class="listcontent">{{item}}{{score}}</div></li>
+  {% endfor %}
+</ul>
+<div class='jtextfill result'>
+    <span><p> .</p><p>. </p></span>
+</div>
+    </div>
+{% for oneresult in result %}
+    <div class="item">
+  <div class='title'>
+      <span>{{oneresult.title}} 排行榜</span>
+  </div>
+      <ul class="list-group">
+  {% for item, score in oneresult.result %}
+  <li class="list-group-item list-group-item-info"><div class="listcontent">{{item}}{{score}}</div></li>
+  {% endfor %}
+</ul>
+<div class='jtextfill result'>
+    <span><p>.</p><p>  .</p></span>
+</div>
+    </div>
+    {% endfor %}
+  </div>
+ <a class="left mycarousel-control-left" href="#myCarousel" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right mycarousel-control-right" href="#myCarousel" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+  </div>
+</div>
+</body>
+<script type="text/javascript">
+    $('.carousel').carousel({
+        interval: false
+    })
+</script>
+<script type="text/javascript">  
+$(document).ready(function() {  
+   $("#myCarousel").swiperight(function() {  
+      $("#myCarousel").carousel('prev');  
+    });  
+   $("#myCarousel").swipeleft(function() {  
+      $("#myCarousel").carousel('next');  
+   });  
+   $(".ui-loader").remove()
+});
+</script>  
+
+</html>
